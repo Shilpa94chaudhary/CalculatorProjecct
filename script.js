@@ -1,5 +1,10 @@
+// All buttons of the calculator
 var buttons = document.getElementsByClassName("button");
+
+// Display area
 var display = document.getElementById("display");
+
+// Reset button
 var resetBtn = document.getElementById("resetBtn");
 
 var operand1 = 0;
@@ -8,21 +13,14 @@ var operator = null;
 var decimalAdded = false;
 
 function resetCalculator() {
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].removeEventListener("click", buttonClickHandler);
-  }
   display.textContent = "";
   operand1 = 0;
   operand2 = null;
   operator = null;
   decimalAdded = false;
-  setTimeout(function () {
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", buttonClickHandler);
-    }
-  });
 }
 
+// Call to resetCalculator() function when user click on reset button
 resetBtn.addEventListener("click", resetCalculator);
 
 // Function to evalute the operations
@@ -31,9 +29,13 @@ function buttonClickHandler() {
   switch (value) {
     case "+":
       operator = "+";
+      // parseFloat() function parses a string argument and returns a
+      // floating point number
       operand1 = parseFloat(display.textContent);
+      // Reset the display
       display.textContent = "";
-      decimalAdded = false; // Reset the decimalAdded flag
+      // Reset the decimalAdded flag
+      decimalAdded = false;
       break;
     case "-":
       operator = "-";
@@ -96,6 +98,7 @@ function buttonClickHandler() {
   }
 }
 
+// Function to evaluate or save operand1 and operator values given by user
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", buttonClickHandler);
 }

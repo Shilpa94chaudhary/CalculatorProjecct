@@ -27,12 +27,13 @@
 
 .button {
   width: 20%;
-  height: 30px;
+  height: 28px;
   display: inline-block;
   border: 2px solid black;
   border-radius: 16px;
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
+  padding-top: 2px;
   margin-bottom: 2px;
 }
 
@@ -70,6 +71,42 @@
 }
 
 #resetBtn {
+  width: 20%;
+  height: 28px;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 16px;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 2px;
+  margin-bottom: 2px;
   width: 45%;
   border-radius: 16px;
 }
+
+/* @media (max-width: 600px) {
+  #calculator {
+    width: 95%;
+    height: auto;
+    min-height: 0;
+    min-width: 0;
+  }
+
+  #display-container {
+    height: 80px;
+    font-size: 24px;
+  }
+
+  .button {
+    width: 22%;
+    height: 30px;
+    font-size: 26px;
+  }
+  #resultBtn {
+    width: 45%;
+  }
+
+  #resetBtn {
+    width: 45%;
+  }
+} */
